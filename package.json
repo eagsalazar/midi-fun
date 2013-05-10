@@ -1,0 +1,13 @@
+{
+  "name": "midi-fun",
+  "version": "0.0.1",
+  "dependencies": {
+    "sass-brunch": "*",
+    "coffee-script-brunch": "*",
+    "jade-brunch": "*",
+    "static-jade-brunch": "~1.4.11"
+  },
+  "scripts": {
+    "start": "brunch watch --server"
+  }
+}
