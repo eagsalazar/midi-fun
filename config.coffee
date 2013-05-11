@@ -1,10 +1,5 @@
 exports.config =
   # See docs at http://brunch.readthedocs.org/en/latest/config.html.
-  conventions:
-    ignored: /^(vendor.*\.less|.+node_modules.+|.+_.+\..+)$/
-  modules:
-    definition: false
-    wrapper: false
   files:
     javascripts:
       joinTo:
@@ -12,7 +7,9 @@ exports.config =
         'js/vendor.js': /^vendor/
       order:
         before: [
-          'vendor/console-polyfill/index.js'
+          'vendor/scripts/jquery-2.0.0.js',
+          'vendor/scripts/lodash.js',
+          'vendor/scripts/backbone.js'
         ]
 
     stylesheets:

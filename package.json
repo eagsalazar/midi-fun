@@ -5,7 +5,9 @@
     "sass-brunch": "*",
     "coffee-script-brunch": "*",
     "jade-brunch": "*",
-    "static-jade-brunch": "~1.4.11"
+    "static-jade-brunch": "~1.4.11",
+    "javascript-brunch": "~1.5.1",
+    "css-brunch": "~1.5.1"
   },
   "scripts": {
     "start": "brunch watch --server"
