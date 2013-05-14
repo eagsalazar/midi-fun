@@ -5,7 +5,7 @@ module.exports = class PlayerView extends Backbone.View
 
   events:
     "change [type=file]": "onMidiSelect"
-    "mouseup [type=range]": "onTempoChange"
+    "mouseup [type=range]:not(:disabled)": "onTempoChange"
     "click button": "onPlayStateChange"
 
   initialize: ->
