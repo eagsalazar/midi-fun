@@ -1,10 +1,27 @@
 module.exports = class MIDIPlayer extends Backbone.Model
 
-  playFile: =>
+  initialize: (file) ->
+    reader = new FileReader()
+    reader.onloadend = @playMIDI
+    reader.readAsDataURL(file)
     @player = MIDI.Player
-    @player.timeWarp = 0.5
+
+  loadFile: =>
     @player.loadFile(@midiFile, @player.start)
+
+  setTempo: (newTempo) =>
+    @player.timeWarp = newTempo
 
   playMIDI: (e) =>
     @midiFile = e.target.result
-    MIDI.loadPlugin @playFile
+    MIDI.loadPlugin @loadFile
+
+  play: =>
+    @player.resume()
+
+  pause: =>
+    @player.pause()
+
+  playing: =>
+    @player.playing
+
