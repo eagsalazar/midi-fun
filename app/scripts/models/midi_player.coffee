@@ -1,16 +1,10 @@
 module.exports = class MIDIPlayer extends Backbone.Model
-  initialize: ->
-    console.log 'initializing midi player'
-    @player = MIDI.Player
 
   playFile: =>
-    @player.timeWarp = 1
+    @player = MIDI.Player
+    @player.timeWarp = 0.5
+    @player.loadFile(@midiFile, @player.start)
 
   playMIDI: (e) =>
     @midiFile = e.target.result
-    @player.loadFile(@midiFile, @player.start)
-    # MIDI.loadPlugin
-    #   soundFontUrl: "./soundfont/"
-    #   callback: @playFile
-
-
+    MIDI.loadPlugin @playFile

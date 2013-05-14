@@ -23,5 +23,5 @@ exports.config =
   plugins:
     jade:
       options:
-        pretty: yes # Adds pretty-indentation whitespaces to output (false by default)
+        pretty: yes
 
